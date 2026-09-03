@@ -30,7 +30,9 @@ O ciclo é sempre este, por esta ordem:
 2. **Fazer as perguntas** sobre esse tópico, antes de escrever código.
 3. Ele responde, e fornece as fotografias ou os ficheiros necessários.
 4. Só então implementar.
-5. Um PR para esse tópico. Ele aprova ou rejeita antes de se avançar.
+5. Um commit para esse tópico, directo na `main` — ver "Git" mais
+   abaixo. Ele vê o resultado e aprova ou manda mudar antes de se
+   avançar.
 
 Não avançar para o tópico seguinte sem ele o trazer.
 
@@ -46,12 +48,20 @@ como. Copiar a estrutura e o conteúdo; não copiar as soluções do tema nem os
 plugins. Antes de reproduzir uma secção do site antigo, confirmar que ela
 ainda faz sentido — nem tudo o que lá está é para manter.
 
-<!-- BEGIN:nextjs-agent-rules -->
+## Git
 
-# This is NOT the Next.js you know
+**Tudo na `main`. Não se criam branches nem se abrem PRs neste projecto.**
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+Commitar directamente em cima da `main` e empurrar para lá. Um commit por
+tópico, com a mensagem a dizer o que mudou e porquê.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+Isto anula a regra por defeito de criar um branch antes de commitar quando se
+está na branch principal: aqui não há revisor do outro lado, e branch + PR +
+merge é cerimónia que só atrasa o deploy. A rede é a CI — o
+`.github/workflows/ci.yml` corre no push para a `main` e apanha tipos, ESLint,
+dependências vulneráveis e um build partido.
 
-<!-- END:nextjs-agent-rules -->
+Isso muda o que um commit na `main` significa: **verificar antes de commitar,
+não depois.** `npm run tipos`, `npm run lint` e `npm run build` passam os três
+antes de a mensagem ser escrita. Um commit que parte a `main` parte também o
+que está em produção.
