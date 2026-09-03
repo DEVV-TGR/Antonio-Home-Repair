@@ -144,14 +144,40 @@ export function Perguntas() {
 
   return (
     <>
+      {/*
+        Em telemóvel é um círculo e não a pastilha com "Dúvidas?" escrito.
+
+        A pastilha tem uns 130px de largura e, num ecrã de 390, tapava o fim de
+        um parágrafo e metade de um botão em várias páginas. Um botão flutuante
+        que esconde conteúdo troca uma comodidade por um defeito, e o defeito é
+        maior. O círculo tapa um canto, que é o que toda a gente já espera de um
+        botão destes.
+
+        O rótulo não desaparece — passa a `sr-only`, e quem ouve a página ouve-o
+        na mesma.
+
+        Dentro do círculo vai um ponto de interrogação e não a casa do logo. A
+        casa é a marca em todo o resto do site, mas um ícone de casa dentro de um
+        círculo no canto inferior direito lê-se como "página inicial" — que é o
+        contrário de ajuda, e leva alguém a tocar à espera de sair da página onde
+        está. Em ecrã largo a casa fica, porque ao lado dela está escrito
+        "Dúvidas?" e não há como confundir.
+      */}
       <button
         type="button"
         onClick={() => setAberto(true)}
         aria-haspopup="dialog"
-        className="fixed bottom-[calc(4.75rem+env(safe-area-inset-bottom))] right-4 z-30 flex items-center gap-2.5 bg-tinta py-3 pl-3.5 pr-4 text-papel shadow-lg transition-transform duration-200 hover:-translate-y-0.5 sm:bottom-6 sm:right-6"
+        className="fixed bottom-[calc(4.75rem+env(safe-area-inset-bottom))] right-4 z-30 flex h-12 w-12 items-center justify-center gap-2.5 rounded-full bg-tinta text-papel shadow-lg transition-transform duration-200 hover:-translate-y-0.5 sm:bottom-6 sm:right-6 sm:h-auto sm:w-auto sm:rounded-none sm:py-3 sm:pl-3.5 sm:pr-4"
       >
-        <Casa className="h-4 w-4 text-ambar" cheia />
-        <span className="font-display text-[0.75rem] font-semibold uppercase tracking-[0.12em]">
+        <span className="sr-only sm:hidden">Perguntas frequentes</span>
+        <span
+          aria-hidden
+          className="font-display text-lg font-bold leading-none text-ambar sm:hidden"
+        >
+          ?
+        </span>
+        <Casa className="hidden h-4 w-4 text-ambar sm:block" cheia />
+        <span className="hidden font-display text-[0.75rem] font-semibold uppercase tracking-[0.12em] sm:inline">
           Dúvidas?
         </span>
       </button>

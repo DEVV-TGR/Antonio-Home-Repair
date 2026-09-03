@@ -10,10 +10,16 @@
   distingue um homem de confiança de uma empresa de serviços gerais. Não foi
   reescrita.
 
-  **Não há aqui os quatro pilares**, embora o site antigo os repetisse nesta
-  página e na inicial. Repetir o mesmo texto em duas páginas divide o valor que
-  cada uma tem para os motores de busca e não acrescenta nada a quem lê. Ficam
-  na inicial, uma vez.
+  Os quatro pilares estão aqui **e** na página inicial, como no site antigo, mas
+  com tratamentos diferentes: na inicial são uma lista curta, aqui é a casa do
+  logo a ser construída em quatro passos. É a página onde o cliente os procura —
+  o site antigo punha-os debaixo de "Porque escolher os nossos serviços?", nesta
+  página.
+
+  O texto é o mesmo nas duas, e isso divide entre elas o valor que cada uma tem
+  para os motores de busca. É uma troca consciente: o Tomás quis-os aqui, e a
+  página inicial de um site de cinco páginas não vai perder posição para a sua
+  própria página Sobre. Se um dia isso incomodar, a que encolhe é a da inicial.
 */
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -22,6 +28,7 @@ import { Botao } from "@/components/Botao";
 import { TituloDeSeccao } from "@/components/TituloDeSeccao";
 import { Reveal } from "@/components/Reveal";
 import { Whatsapp } from "@/components/Icones";
+import { PilaresConstruidos } from "@/components/PilaresConstruidos";
 
 export const metadata: Metadata = {
   title: "Sobre Nós",
@@ -87,6 +94,8 @@ export default function Pagina() {
           className="object-cover"
         />
       </div>
+
+      <PilaresConstruidos />
 
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
         <div className="max-w-xl">
