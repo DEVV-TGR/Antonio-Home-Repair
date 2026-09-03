@@ -18,7 +18,13 @@
 */
 
 /* O contorno, em fracções da caixa do elemento. */
-const CAMINHO = "M0.5 0 L1 0.32 L1 0.93 Q1 1 0.93 1 L0.07 1 Q0 1 0 0.93 Z";
+/*
+  Cuidado com o fecho: sem o `L0 0.32` antes do `Z`, o caminho fecha em recta
+  desde o canto de baixo à esquerda até ao bico do telhado, e o que sai é um
+  losango e não uma casa. Aconteceu.
+*/
+const CAMINHO =
+  "M0.5 0 L1 0.32 L1 0.93 Q1 1 0.93 1 L0.07 1 Q0 1 0 0.93 L0 0.32 Z";
 
 export function MascaraDaCasa() {
   return (

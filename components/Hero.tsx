@@ -21,7 +21,7 @@ import { Telefone } from "./Icones";
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-20">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-12 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:pb-24 md:pt-20">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-12 sm:px-8 md:min-h-[86vh] md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:pb-24 md:pt-16">
         <div>
           <p className="etiqueta flex items-center gap-2.5 text-ambar-texto">
             <Casa className="h-3.5 w-3.5" cheia />
@@ -54,7 +54,7 @@ export function Hero() {
         */}
         <div className="relative mx-auto w-full max-w-sm md:max-w-none">
           <div
-            className="relative aspect-[4/5] w-full bg-papel-fundo"
+            className="relative aspect-[5/6] w-full bg-papel-fundo"
             style={{ clipPath: "url(#casa)" }}
           >
             <Image

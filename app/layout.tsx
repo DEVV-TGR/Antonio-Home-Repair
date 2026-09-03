@@ -21,7 +21,19 @@ export const metadata: Metadata = {
     siteName: site.nome,
     title: `${site.nome} — Reparações e pequenas obras na Maia`,
     description: site.descricao,
+    /* JPEG e não webp: o WhatsApp e o Facebook ainda deixam cair partilhas com
+       webp, e uma partilha sem imagem parece um link morto. Gerada por
+       `npm run imagens`. */
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: `Ferramentas alinhadas com o logótipo da ${site.nome}.`,
+      },
+    ],
   },
+  twitter: { card: "summary_large_image" },
   /* Sem `alternates.canonical` aqui: cada página declara o seu. Um canónico
      herdado do layout aponta a página toda para a raiz. */
 };

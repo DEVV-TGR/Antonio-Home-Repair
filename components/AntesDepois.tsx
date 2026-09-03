@@ -37,19 +37,31 @@ export function AntesDepois({
   projecto,
   prioridade = false,
   sizes,
+  proporcao,
 }: {
   projecto: Projecto;
   /* A primeira comparação de uma página é carregada com prioridade; as outras
      ficam para quando chegarem à vista. */
   prioridade?: boolean;
   sizes: string;
+  /*
+    Uma proporção imposta, para quando várias comparações estão lado a lado numa
+    grelha. Os quatro projectos têm proporções nativas diferentes (0,75 / 0,97 /
+    0,74) e numa fila de três isso põe as legendas a começar a três alturas
+    diferentes. Impor a mesma a todas alinha-as.
+
+    A comparação continua honesta: o corte é o mesmo nas duas metades do par, e
+    é isso — e só isso — que o antes/depois exige. Sem esta propriedade fica a
+    proporção nativa, que é o que a página de portfolio quer.
+  */
+  proporcao?: string;
 }) {
   const [posicao, setPosicao] = useState(50);
 
   return (
     <div
       className="group relative select-none overflow-hidden bg-papel-fundo"
-      style={{ aspectRatio: `${projecto.largura} / ${projecto.altura}` }}
+      style={{ aspectRatio: proporcao ?? `${projecto.largura} / ${projecto.altura}` }}
     >
       <Image
         src={`/images/${projecto.chave}-depois.webp`}

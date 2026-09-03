@@ -1,5 +1,11 @@
 /*
-  O logo com o nome ao lado, como aparece no cabeçalho e no rodapé.
+  O logo com o nome ao lado.
+
+  O logo é um selo que já traz o nome dentro dele, em letra minúscula. Repetido
+  em tipo ao lado, o selo tende a encolher até o boneco de barba ficar uma
+  mancha — a 36px já não se percebia o que era. Fica a 48px, que é o mínimo em
+  que o martelo e o formão ainda se leem, e o tipo ao lado é que faz o trabalho
+  de dizer o nome. É este par que aparece no cabeçalho e no rodapé.
 
   O ficheiro é um SVG de traço preto sobre transparente. No rodapé escuro é o
   **mesmo** ficheiro com `invert`: o traço passa a branco e o transparente
@@ -29,11 +35,11 @@ export function Marca({
       <Image
         src="/images/logo.svg"
         alt=""
-        width={40}
-        height={44}
+        width={52}
+        height={57}
         unoptimized
         priority
-        className={`h-9 w-auto shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 ${
+        className={`h-12 w-auto shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 ${
           invertido ? "invert" : ""
         }`}
       />

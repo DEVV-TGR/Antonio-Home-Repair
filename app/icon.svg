@@ -1,0 +1,14 @@
+<!--
+  O favicon.
+
+  Não é o logo. O logo é um selo com um boneco de barba, um martelo, um formão e
+  duas linhas de texto lá dentro — a 16 pixéis é uma mancha cinzenta. O que
+  sobrevive a 16 pixéis é a silhueta da casa, e é essa que aqui está.
+
+  Fundo tinta e casa âmbar, e não o contrário: um favicon de traço preto sobre
+  transparente desaparece num separador de tema escuro.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0f0f0e"/>
+  <path d="M16 6.5 26 13.6 26 24.2Q26 26 24.2 26L7.8 26Q6 26 6 24.2L6 13.6Z" fill="#e8a317"/>
+</svg>

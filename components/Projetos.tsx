@@ -29,6 +29,7 @@ export function Projetos() {
               <AntesDepois
                 projecto={projecto}
                 prioridade={i === 0}
+                proporcao="4 / 5"
                 sizes="(min-width: 768px) 32vw, 90vw"
               />
               <h3 className="mt-5 font-display text-lg font-bold tracking-tight">
