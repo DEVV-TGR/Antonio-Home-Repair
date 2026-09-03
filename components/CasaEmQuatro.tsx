@@ -8,33 +8,44 @@
   é o que a secção diz por palavras, dito outra vez pelo desenho.
 
   O que já lá estava fica esbatido; a parte que **este** pilar acrescenta sai a
-  âmbar e desenha-se sozinha quando o cartão entra na vista. É a única coisa no
-  site que se desenha a si própria, e é aqui porque é aqui que há uma ideia de
-  construção para transmitir.
+  âmbar e desenha-se quando o cartão entra na vista.
 
   Os caminhos e os nomes das partes estão em `lib/casa.ts`, e não aqui, porque a
-  secção que usa este componente é de servidor e precisa dos nomes. Ver o
-  comentário lá — um componente de servidor que importa um array de um ficheiro
-  `"use client"` recebe uma referência e não o valor.
+  secção que usa este componente é de servidor e precisa dos nomes.
 
-  ## O movimento
+  ## O estado por omissão é "desenhado", e isso não é um pormenor
 
-  O `pathLength` da Motion anima um traço a ser desenhado sem se saber o
-  comprimento dele em pixéis — normaliza-o para 0 a 1. Feito à mão, isto era
-  medir cada caminho com `getTotalLength()` e mexer no `stroke-dashoffset`.
+  A primeira versão disto animava o `pathLength` da Motion, de 0 a 1. Funciona —
+  mas põe a **visibilidade** da linha nas mãos da animação: enquanto o
+  `whileInView` não dispara, o traço está a comprimento zero, que é o mesmo que
+  não existir. Se o bundle falhar, se a hidratação encravar, se o observador não
+  chegar a disparar naquele browser, a linha nunca aparece. E o que se perde não
+  é um efeito: é metade do desenho.
 
-  Quem pediu ao sistema para não haver movimento vê o traço já desenhado. Não é
-  uma versão pobre: o desenho final é exactamente o mesmo, só não se vê a
-  aparecer.
+  Aqui a regra é ao contrário. O `<path>` não leva estilo nenhum, e por isso
+  **está desenhado desde o primeiro instante**, com ou sem JavaScript. A
+  animação é uma classe que se acrescenta quando o cartão entra na vista, e o
+  fim dela é exactamente o estado que já lá estava — ver `traco-a-desenhar` no
+  globals.css. Falhe o que falhar, a linha vê-se.
+
+  O `pathLength={1}` normaliza o comprimento de cada caminho para uma unidade,
+  para o mesmo `stroke-dasharray` servir os quatro sem se medir nenhum.
+
+  Quem pediu ao sistema para não haver movimento cai no mesmo sítio: o
+  globals.css corta a duração de todas as animações, esta acaba no primeiro
+  instante, e o fim dela é o traço desenhado.
 */
-import { motion, useReducedMotion } from "motion/react";
+import { useRef } from "react";
+import { useInView } from "motion/react";
 import { partesDaCasa } from "@/lib/casa";
 
 export function CasaEmQuatro({ passo }: { passo: number }) {
-  const semMovimento = useReducedMotion();
+  const referencia = useRef<SVGSVGElement>(null);
+  const naVista = useInView(referencia, { once: true, margin: "-80px" });
 
   return (
     <svg
+      ref={referencia}
       viewBox="0 0 120 110"
       aria-hidden
       className="h-auto w-full"
@@ -44,20 +55,13 @@ export function CasaEmQuatro({ passo }: { passo: number }) {
       strokeLinejoin="round"
     >
       {partesDaCasa.slice(0, passo - 1).map((parte) => (
-        <path
-          key={parte.nome}
-          d={parte.caminho}
-          className="stroke-tinta/20"
-        />
+        <path key={parte.nome} d={parte.caminho} className="stroke-tinta/20" />
       ))}
 
-      <motion.path
+      <path
         d={partesDaCasa[passo - 1].caminho}
-        className="stroke-ambar"
-        initial={semMovimento ? false : { pathLength: 0 }}
-        whileInView={{ pathLength: 1 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        pathLength={1}
+        className={`stroke-ambar ${naVista ? "traco-a-desenhar" : ""}`}
       />
     </svg>
   );

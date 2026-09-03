@@ -87,6 +87,33 @@ body {
 }
 
 /*
+  O traço que se desenha nos pilares do Sobre Nós.
+
+  Repare-se no que **não** está aqui: um `animation-fill-mode`. Sem ele, o que
+  fica quando a animação acaba é o estado do elemento sem animação nenhuma — o
+  traço inteiro, sem `stroke-dasharray`. É essa a razão de ser desta forma e não
+  de uma animação da Motion: a linha existe por omissão, e a animação só decide
+  se ela aparece de uma vez ou a ser desenhada. Nada do que possa correr mal com
+  JavaScript a faz desaparecer.
+
+  Os valores contam com `pathLength="1"` no `<path>`, que normaliza o
+  comprimento do caminho para uma unidade. Sem isso, cada uma das quatro partes
+  da casa precisaria do seu comprimento medido em pixéis.
+*/
+@keyframes desenhar-traco {
+  from {
+    stroke-dasharray: 0 1;
+  }
+  to {
+    stroke-dasharray: 1 1;
+  }
+}
+
+.traco-a-desenhar {
+  animation: desenhar-traco 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
   Tudo o que anima passa por aqui. Quem pediu ao sistema para não haver
   movimento não o leva.
 */
