@@ -49,3 +49,8 @@ next-env.d.ts
 .claude/worktrees/
 .claude/skills/
 .claude/settings.local.json
+
+# originais das imagens
+# PNGs de 1-2 MB do WordPress antigo; o que vai para o site são os webp
+# gerados por `npm run imagens`. Ver public/images/README.md.
+/originais/

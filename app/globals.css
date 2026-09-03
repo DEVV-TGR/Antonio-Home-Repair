@@ -3,27 +3,103 @@
 /*
   Tailwind v4 é CSS-first: o tema define-se aqui, em `@theme`, e não num
   tailwind.config.js — esse ficheiro já não existe.
- 
-  As cores, tipos de letra e espaçamentos da marca entram neste bloco quando
-  o desenho estiver fechado. Ver docs/PLANO.md.
+
+  ## A paleta
+
+  O logo é monocromático puro. O site fica-lhe fiel: preto-tinta sobre papel
+  quente em quase toda a página, e um único âmbar.
+
+  **O âmbar não é cor de fundo de secção.** Aparece em botões, no sublinhado do
+  título e no estado activo — mais nada. É precisamente o que separa isto do site
+  antigo, que punha painéis inteiros de laranja #F5924E e por isso lia infantil.
+
+  Duas variantes de âmbar, e a razão é contraste: o `--color-ambar` tem
+  luminância alta demais para texto sobre papel (fica em 2,2:1, reprovado), mas é
+  excelente como fundo de botão com texto tinta por cima (8,4:1). Quando o âmbar
+  precisa de ser *texto*, é o `--color-ambar-texto`, escurecido até passar.
 */
 @theme {
-  --font-sans: var(--fonte-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-papel: #faf9f7;
+  --color-papel-fundo: #f1eee9;
+  --color-tinta: #0f0f0e;
+  --color-tinta-suave: #1a1917;
+  --color-cinza: #6b6864;
+  --color-linha: #ddd8d0;
+  --color-ambar: #e8a317;
+  --color-ambar-texto: #7c5104;
+
+  --font-display: var(--fonte-display), "Archivo", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-sans: var(--fonte-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-:root {
-  --fundo: #ffffff;
-  --texto: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fundo: #0a0a0a;
-    --texto: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--fundo);
-  color: var(--texto);
+  background: var(--color-papel);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+  /* A barra fixa de contacto em telemóvel tapa o fim da página. */
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-ambar);
+  color: var(--color-tinta);
+}
+
+/*
+  O foco visível não é opcional. O contorno é tinta e não âmbar porque tem de se
+  ver tanto sobre papel como sobre a banda escura, e o âmbar desaparece no preto.
+*/
+:focus-visible {
+  outline: 2px solid var(--color-ambar);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/*
+  Os títulos em display querem tracking negativo e quebras equilibradas — uma
+  linha órfã de uma palavra num título grande estraga-o.
+*/
+.titulo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+/* A etiqueta que abre cada secção: maiúsculas pequenas, muito espaçadas. */
+.etiqueta {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* O telefone não deve dançar entre estados nem entre pesos. */
+.numeros {
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+  Tudo o que anima passa por aqui. Quem pediu ao sistema para não haver
+  movimento não o leva.
+*/
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
