@@ -26,7 +26,8 @@
 */
 import { useActionState } from "react";
 import Link from "next/link";
-import { enviarPedido, ESTADO_INICIAL } from "@/app/contactos/accoes";
+import { enviarPedido } from "@/app/contactos/accoes";
+import { ESTADO_INICIAL } from "@/lib/contacto";
 
 const CAMPO =
   "mt-2 w-full border border-linha bg-papel px-4 py-3 text-[0.9375rem] text-tinta outline-none transition-colors placeholder:text-cinza/50 focus:border-tinta";

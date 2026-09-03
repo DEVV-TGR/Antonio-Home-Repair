@@ -12,6 +12,10 @@
 
   O bloco de texto fica `sticky` em ecrã largo — a fotografia é alta e, sem
   isso, quem chega ao fim dela já não tem à vista o nome do que está a ver.
+
+  A coluna da fotografia leva quase o dobro da do texto. Numa página cujo
+  trabalho é mostrar fotografias, dividir o espaço a meio dá duas colunas
+  medianas e nenhuma fotografia que se veja.
 */
 import type { Metadata } from "next";
 import { projectos } from "@/lib/projectos";
@@ -41,11 +45,11 @@ export default function Pagina() {
         />
       </section>
 
-      <div className="mx-auto max-w-4xl px-5 pb-20 pt-12 sm:px-8 md:pb-28">
+      <div className="mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 md:pb-28">
         <div className="flex flex-col gap-20 md:gap-28">
           {projectos.map((projecto, i) => (
             <Reveal key={projecto.chave}>
-              <article className="grid gap-8 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-12">
+              <article className="grid gap-8 md:grid-cols-[0.72fr_1.28fr] md:items-start md:gap-14">
                 <div className="md:sticky md:top-28">
                   <span className="etiqueta numeros text-cinza">
                     {String(i + 1).padStart(2, "0")} /{" "}
@@ -75,7 +79,8 @@ export default function Pagina() {
                 <AntesDepois
                   projecto={projecto}
                   prioridade={i === 0}
-                  sizes="(min-width: 768px) 45vw, 90vw"
+                  alturaMaxima="76vh"
+                  sizes="(min-width: 768px) 58vw, 90vw"
                 />
               </article>
             </Reveal>

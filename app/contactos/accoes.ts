@@ -27,17 +27,15 @@
 
   Feita aqui e não só no browser. O `required` do HTML é uma cortesia para quem
   preenche; quem manda um POST à mão nem o vê.
+
+  ## Este ficheiro exporta uma função e mais nada
+
+  É a regra do `"use server"`: tudo o que aqui for exportado fica acessível por
+  um POST de fora, e por isso o Next só deixa exportar funções assíncronas. O
+  tipo `Estado` e o `ESTADO_INICIAL` vivem em lib/contacto.ts por causa disso.
 */
 import { site } from "@/lib/site";
-
-export type Estado = {
-  estado: "inerte" | "ok" | "erro";
-  mensagem?: string;
-  /* Que campos falharam, para o formulário os poder marcar. */
-  campos?: string[];
-};
-
-export const ESTADO_INICIAL: Estado = { estado: "inerte" };
+import type { Estado } from "@/lib/contacto";
 
 const LIMITES = {
   nome: [2, 100],

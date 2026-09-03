@@ -38,6 +38,7 @@ export function AntesDepois({
   prioridade = false,
   sizes,
   proporcao,
+  alturaMaxima,
 }: {
   projecto: Projecto;
   /* A primeira comparação de uma página é carregada com prioridade; as outras
@@ -55,13 +56,39 @@ export function AntesDepois({
     proporção nativa, que é o que a página de portfolio quer.
   */
   proporcao?: string;
+  /*
+    Um tecto de altura, em unidades de viewport.
+
+    À proporção nativa, um retrato de 832×1128 com 660px de largura fica com
+    895px de altura e não cabe num ecrã de portátil. Num comparador antes/depois
+    isso não é só feio: quem não vê as duas metades ao mesmo tempo não está a
+    comparar nada.
+
+    O tecto aplica-se pela **largura** e não por um `max-height`. Uma caixa com
+    `aspect-ratio` e `width: 100%` ignora um tecto de altura e transborda; o que
+    a encolhe de verdade é limitar-lhe a largura ao que a altura permite, que é
+    a altura vezes a proporção.
+
+    O `w-full` na caixa é obrigatório e não decorativo. Com `margin-inline:
+    auto` e sem largura declarada, um item de grelha deixa de esticar e passa a
+    dimensionar-se pelo conteúdo — e o conteúdo aqui são duas imagens em posição
+    absoluta, que não ocupam espaço no fluxo. O resultado é uma caixa de largura
+    zero e uma página sem fotografia nenhuma. Aconteceu.
+  */
+  alturaMaxima?: string;
 }) {
   const [posicao, setPosicao] = useState(50);
 
   return (
     <div
-      className="group relative select-none overflow-hidden bg-papel-fundo"
-      style={{ aspectRatio: proporcao ?? `${projecto.largura} / ${projecto.altura}` }}
+      className="group relative w-full select-none overflow-hidden bg-papel-fundo"
+      style={{
+        aspectRatio: proporcao ?? `${projecto.largura} / ${projecto.altura}`,
+        ...(alturaMaxima && {
+          maxWidth: `calc(${alturaMaxima} * ${projecto.largura} / ${projecto.altura})`,
+          marginInline: "auto",
+        }),
+      }}
     >
       <Image
         src={`/images/${projecto.chave}-depois.webp`}

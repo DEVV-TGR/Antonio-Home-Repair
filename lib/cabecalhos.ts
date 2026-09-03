@@ -21,9 +21,22 @@
   daqui. Se alguém trocar isso por um `<link>` para o fonts.googleapis.com, as
   fontes deixam de carregar — e o sítio de o corrigir é aqui, não no `<head>`.
 */
+/*
+  ## O `unsafe-eval` em desenvolvimento
+
+  Sem ele, o `npm run dev` enche a consola de "eval() is not supported in this
+  environment" e perdem-se as stack traces do React — ele usa `eval` para
+  reconstruir a pilha de quem chamou um componente. Em produção não usa: o
+  próprio aviso o diz, "React will never use eval() in production mode".
+
+  Por isso a permissão existe **só** em desenvolvimento. Pô-la nas duas era
+  abrir em produção um buraco por uma comodidade que em produção não existe.
+*/
+const EVAL = process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'";
+
 const POLITICA = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline'${EVAL}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
