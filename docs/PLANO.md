@@ -34,6 +34,10 @@ Nada disto bloqueia o site; tudo isto o melhora.
       email e diz que não deu — não engole o pedido.
 - [ ] **Crédito do rodapé.** O site antigo diz "XquisiteVision". Está a dizer
       "DevPlus". Confirmar.
+- [ ] **"Orçamento sem compromisso".** Aparece na faixa da página inicial e no
+      fecho do portfolio, e **não vem do texto do cliente** — o site antigo
+      nunca o diz. É uma promessa comercial que ficou escrita sem ele a ter
+      feito. Ou ele confirma, ou sai das duas.
 
 ### Conteúdo a pedir ao António
 
@@ -48,9 +52,25 @@ Nada disto bloqueia o site; tudo isto o melhora.
 - [ ] **Mais fotografias de obra.** Há quatro trabalhos. O portfolio aguenta
       mais sem alterações — basta acrescentar as imagens e uma entrada no
       `lib/projectos.ts`.
-- [ ] **Perguntas frequentes.** O site antigo tinha o título "Perguntas
-      frequentes" na página de contactos e nenhuma pergunta por baixo. Ficou de
-      fora até haver perguntas.
+- [ ] **As seis perguntas que faltam ao painel.** O painel de perguntas
+      frequentes (o botão "Dúvidas?" no canto) só responde ao que já está
+      escrito no site: serviços, zona, como pedir orçamento, mandar
+      fotografias, se fazem obras grandes, e que dados guarda o formulário.
+
+      Ficaram de fora, por não haver resposta que não fosse inventada — e
+      inventá-las é assumir obrigações em nome do António, que vai ter alguém à
+      porta a cobrá-las:
+
+      - Quanto custa? Há valor mínimo? A deslocação paga-se?
+      - Em quanto tempo responde? E quanto tempo demora um trabalho?
+      - Dá garantia sobre o que faz?
+      - Qual é o horário? Trabalha ao sábado?
+      - Como se paga? Passa factura?
+      - Até onde se desloca para lá da Maia?
+
+      São as seis que qualquer pessoa faz a um homem das obras. Bastam dez
+      minutos de conversa com ele e entram no `lib/perguntas.ts` — o painel não
+      precisa de mais código.
 - [ ] **Horário.** Não existe em lado nenhum do site antigo. Faz diferença nos
       dados estruturados e no Google.
 

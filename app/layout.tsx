@@ -5,6 +5,7 @@ import { servicos } from "@/lib/servicos";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { BarraMovel } from "@/components/BarraMovel";
+import { Perguntas } from "@/components/Perguntas";
 import { MascaraDaCasa } from "@/components/Casa";
 import "./globals.css";
 
@@ -99,6 +100,7 @@ export default function RootLayout({
         <Nav />
         <main id="conteudo">{children}</main>
         <Footer />
+        <Perguntas />
         <BarraMovel />
       </body>
     </html>
