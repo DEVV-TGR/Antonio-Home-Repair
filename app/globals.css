@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/*
+  Tailwind v4 é CSS-first: o tema define-se aqui, em `@theme`, e não num
+  tailwind.config.js — esse ficheiro já não existe.
+ 
+  As cores, tipos de letra e espaçamentos da marca entram neste bloco quando
+  o desenho estiver fechado. Ver docs/PLANO.md.
+*/
+@theme {
+  --font-sans: var(--fonte-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --fundo: #ffffff;
+  --texto: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #0a0a0a;
+    --texto: #ededed;
+  }
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+}
