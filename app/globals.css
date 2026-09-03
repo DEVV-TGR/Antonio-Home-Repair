@@ -6,17 +6,32 @@
 
   ## A paleta
 
-  O logo é monocromático puro. O site fica-lhe fiel: preto-tinta sobre papel
-  quente em quase toda a página, e um único âmbar.
+  O logo é monocromático puro, mas o laranja é a cor que o cliente já usa — nas
+  redes, no material impresso, e no site que este substitui. É esse laranja que
+  aqui está, o `#F5924E`, tal e qual.
 
-  **O âmbar não é cor de fundo de secção.** Aparece em botões, no sublinhado do
-  título e no estado activo — mais nada. É precisamente o que separa isto do site
-  antigo, que punha painéis inteiros de laranja #F5924E e por isso lia infantil.
+  O que **não** se repete do site antigo é a escala. Lá havia painéis inteiros
+  de laranja com corpo de texto por cima, e é isso que o faz ler amador. Aqui o
+  laranja atravessa a página em duas tiras — a faixa de confiança e o bloco de
+  fecho — e no resto vive em botões, números, filetes e glifos.
 
-  Duas variantes de âmbar, e a razão é contraste: o `--color-ambar` tem
-  luminância alta demais para texto sobre papel (fica em 2,2:1, reprovado), mas é
-  excelente como fundo de botão com texto tinta por cima (8,4:1). Quando o âmbar
-  precisa de ser *texto*, é o `--color-ambar-texto`, escurecido até passar.
+  ## Três laranjas, e a razão é medida e não gosto
+
+  O `#F5924E` é claro. Sobre o papel dá 2,19:1, que reprova em qualquer critério
+  e, mais importante do que reprovar, quase não se vê. Com preto por cima dá
+  8,31:1, que é excelente.
+
+  Ou seja: serve para **preencher** e não serve para **desenhar**. Como metade
+  do acento neste site são traços, glifos e filetes sobre papel, um token só
+  apagava-os a todos.
+
+    --color-laranja        fundo, com preto por cima      8,31:1 sobre tinta
+    --color-laranja-forte  traço, glifo, filete, número   3,60:1 sobre papel
+    --color-laranja-texto  texto pequeno sobre papel      5,06:1 sobre papel
+
+  A regra, dita de uma vez: **fundo, traço ou texto — cada um tem o seu.** Quem
+  usar o `laranja` num traço sobre papel não vai ver um erro, vai ver o traço
+  desaparecer, que é pior.
 */
 @theme {
   --color-papel: #faf9f7;
@@ -25,8 +40,9 @@
   --color-tinta-suave: #1a1917;
   --color-cinza: #6b6864;
   --color-linha: #ddd8d0;
-  --color-ambar: #e8a317;
-  --color-ambar-texto: #7c5104;
+  --color-laranja: #f5924e;
+  --color-laranja-forte: #d16414;
+  --color-laranja-texto: #a85410;
 
   --font-display: var(--fonte-display), "Archivo", ui-sans-serif, system-ui,
     sans-serif;
@@ -46,16 +62,18 @@ body {
 }
 
 ::selection {
-  background: var(--color-ambar);
+  background: var(--color-laranja);
   color: var(--color-tinta);
 }
 
 /*
-  O foco visível não é opcional. O contorno é tinta e não âmbar porque tem de se
-  ver tanto sobre papel como sobre a banda escura, e o âmbar desaparece no preto.
+  O foco visível não é opcional, e leva o laranja **forte**: o contorno tem de
+  se ver sobre papel e sobre a banda escura, e o `#F5924E` sobre papel dá
+  2,19:1 — um contorno de foco que ninguém vê é o mesmo que não haver contorno.
+  O forte dá 3,60 sobre papel e 5,06 sobre o preto.
 */
 :focus-visible {
-  outline: 2px solid var(--color-ambar);
+  outline: 2px solid var(--color-laranja-forte);
   outline-offset: 3px;
   border-radius: 2px;
 }

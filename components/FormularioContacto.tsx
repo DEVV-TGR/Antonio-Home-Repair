@@ -43,7 +43,7 @@ export function FormularioContacto() {
     return (
       <div
         role="status"
-        className="border-l-2 border-ambar bg-papel-fundo px-6 py-8"
+        className="border-l-2 border-laranja-forte bg-papel-fundo px-6 py-8"
       >
         <h3 className="font-display text-xl font-bold tracking-tight">
           Pedido enviado.
@@ -151,7 +151,7 @@ export function FormularioContacto() {
           type="checkbox"
           required
           aria-invalid={falhou("termos") || undefined}
-          className="mt-0.5 h-4 w-4 shrink-0 accent-ambar"
+          className="mt-0.5 h-4 w-4 shrink-0 accent-laranja-forte"
         />
         <label htmlFor="termos" className="text-sm leading-relaxed text-cinza">
           Declaro que aceito os{" "}
@@ -175,7 +175,7 @@ export function FormularioContacto() {
       <button
         type="submit"
         disabled={pendente}
-        className="mt-1 inline-flex items-center justify-center bg-ambar px-6 py-3.5 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.12em] text-tinta transition-colors hover:bg-tinta hover:text-papel disabled:cursor-progress disabled:opacity-60 disabled:hover:bg-ambar disabled:hover:text-tinta"
+        className="mt-1 inline-flex items-center justify-center bg-laranja px-6 py-3.5 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.12em] text-tinta transition-colors hover:bg-tinta hover:text-papel disabled:cursor-progress disabled:opacity-60 disabled:hover:bg-laranja disabled:hover:text-tinta"
       >
         {pendente ? "A enviar…" : "Enviar pedido"}
       </button>

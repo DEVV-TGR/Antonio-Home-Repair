@@ -8,7 +8,7 @@
   é o que a secção diz por palavras, dito outra vez pelo desenho.
 
   O que já lá estava fica esbatido; a parte que **este** pilar acrescenta sai a
-  âmbar e desenha-se quando o cartão entra na vista.
+  laranja e desenha-se quando o cartão entra na vista.
 
   Os caminhos e os nomes das partes estão em `lib/casa.ts`, e não aqui, porque a
   secção que usa este componente é de servidor e precisa dos nomes.
@@ -61,7 +61,7 @@ export function CasaEmQuatro({ passo }: { passo: number }) {
       <path
         d={partesDaCasa[passo - 1].caminho}
         pathLength={1}
-        className={`stroke-ambar ${naVista ? "traco-a-desenhar" : ""}`}
+        className={`stroke-laranja-forte ${naVista ? "traco-a-desenhar" : ""}`}
       />
     </svg>
   );

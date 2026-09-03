@@ -122,7 +122,7 @@ export function Nav() {
                 onClick={() => setAberto(false)}
                 className="flex items-center gap-4 border-b border-linha py-5 font-display text-2xl font-bold uppercase tracking-tight"
               >
-                <Casa className="h-4 w-4 shrink-0 text-ambar" cheia />
+                <Casa className="h-4 w-4 shrink-0 text-laranja-forte" cheia />
                 {item.texto}
               </Link>
             ))}

@@ -11,10 +11,20 @@ legais. Tudo estático, sem base de dados.
 
 **Decisões de desenho**, tomadas a 3 de Setembro de 2026:
 
-- **Preto e âmbar.** Papel `#FAF9F7`, tinta `#0F0F0E`, âmbar `#E8A317`. O âmbar
-  não é cor de fundo de secção — só botões, o sublinhado do título e o estado
-  activo. A excepção é o bloco de fecho da página inicial, e está justificada no
-  `components/Cta.tsx`.
+- **Preto e laranja.** Papel `#FAF9F7`, tinta `#0F0F0E`, e o laranja do
+  cliente, `#F5924E`, o mesmo do site antigo. Revisto a 3 de Setembro de 2026:
+  a primeira versão usava um âmbar dourado aproximado, e o Tomás corrigiu — é a
+  cor que ele usa, e tem de ser a dele.
+
+  São **três** tokens e não um, por medida e não por gosto: o `#F5924E` dá
+  8,31:1 com preto por cima, mas só 2,19:1 sobre o papel. Serve para preencher e
+  não para desenhar. O `laranja-forte` (`#D16414`) é para traços, glifos e
+  filetes sobre fundo claro; o `laranja-texto` (`#A85410`) para texto pequeno.
+  A regra está escrita no `app/globals.css`.
+
+  O laranja atravessa a página em duas tiras — a faixa de confiança e o bloco de
+  fecho — e no resto vive em botões, nos números dos serviços, em filetes e em
+  glifos. Nunca por trás de texto corrido, que é o que estraga o site antigo.
 - **A casa do logo como motivo**: máscara das fotografias, marcador das
   etiquetas de secção, sinal no hover dos serviços.
 - **Archivo** para títulos, **Inter** para corpo.

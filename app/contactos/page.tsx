@@ -120,7 +120,7 @@ export default function Pagina() {
         </div>
 
         <div>
-          <h2 className="etiqueta text-ambar-texto">Deixe-nos a sua mensagem</h2>
+          <h2 className="etiqueta text-laranja-texto">Deixe-nos a sua mensagem</h2>
           <div className="mt-6">
             <FormularioContacto />
           </div>

@@ -11,6 +11,15 @@
 
   O hover só existe onde há rato: em telemóvel a casa está sempre visível, senão
   ninguém a vê.
+
+  ## Os números são grandes por causa do contraste, não por gosto
+
+  Passaram de cinzentos e minúsculos a laranja e a 24px. As duas coisas andam
+  juntas: a 11px, a única das três variantes de laranja que passa contraste é a
+  mais escura, e um número castanho de 11px não acrescenta cor nenhuma à página.
+  A 24px contam como texto grande, o limiar desce para 3:1, e aceitam o
+  `laranja-forte` — que se vê. A secção ganha a batida de laranja que se
+  procurava, e de caminho a lista passa a ler-se como o catálogo numerado que é.
 */
 import { servicos } from "@/lib/servicos";
 import { TituloDeSeccao } from "./TituloDeSeccao";
@@ -31,11 +40,11 @@ export function Servicos() {
           <Reveal key={servico.nome} atraso={(i % 4) * 0.06} className="h-full">
             <li className="group h-full border-t border-linha pb-8 pt-5 transition-colors hover:border-tinta">
               <div className="flex items-center justify-between">
-                <span className="etiqueta numeros text-cinza">
+                <span className="numeros font-display text-2xl font-bold leading-none tracking-tight text-laranja-forte">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <Casa
-                  className="h-3.5 w-3.5 text-ambar opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100"
+                  className="h-3.5 w-3.5 text-laranja-forte opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100"
                   cheia
                 />
               </div>

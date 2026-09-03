@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 export default function NaoEncontrado() {
   return (
     <section className="mx-auto flex min-h-[72vh] max-w-2xl flex-col items-start justify-center px-5 py-32 sm:px-8">
-      <Casa className="h-10 w-10 text-ambar" />
+      <Casa className="h-10 w-10 text-laranja-forte" />
       <h1 className="titulo mt-8 text-[clamp(2rem,6vw,3.5rem)]">
         Esta página não existe.
       </h1>

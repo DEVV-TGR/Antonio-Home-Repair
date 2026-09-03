@@ -27,7 +27,7 @@ export function BarraMovel() {
         href={site.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-1 items-center justify-center gap-2.5 bg-ambar py-4 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.12em] text-tinta"
+        className="flex flex-1 items-center justify-center gap-2.5 bg-laranja py-4 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.12em] text-tinta"
       >
         <Whatsapp className="h-4 w-4" />
         WhatsApp

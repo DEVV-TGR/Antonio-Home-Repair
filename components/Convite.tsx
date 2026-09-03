@@ -29,7 +29,7 @@ export function Convite() {
 
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
         <div className="max-w-2xl">
-          <p className="etiqueta flex items-center gap-2.5 text-ambar">
+          <p className="etiqueta flex items-center gap-2.5 text-laranja">
             <Casa className="h-3.5 w-3.5" cheia />
             O António trata disso por si
           </p>

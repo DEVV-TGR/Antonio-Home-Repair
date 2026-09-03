@@ -27,7 +27,7 @@ export function TituloDeSeccao({
     <div className="max-w-2xl">
       <p
         className={`etiqueta flex items-center gap-2.5 ${
-          claro ? "text-ambar" : "text-ambar-texto"
+          claro ? "text-laranja" : "text-laranja-texto"
         }`}
       >
         <Casa className="h-3.5 w-3.5" cheia />

@@ -1,7 +1,7 @@
 /*
   Os quatro pilares, na página Sobre Nós.
 
-  A página inicial já os tem, em lista com um filete âmbar à esquerda. Aqui têm
+  A página inicial já os tem, em lista com um filete laranja à esquerda. Aqui têm
   o tratamento longo: cada um acrescenta uma parte à casa do logo, e os quatro
   lado a lado mostram-na a ser construída.
 

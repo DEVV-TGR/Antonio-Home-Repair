@@ -1,16 +1,26 @@
 /*
   O fecho: as três maneiras de falar com ele.
 
-  ## O único painel âmbar do site
+  ## O segundo, e último, painel de laranja cheio
 
-  A regra do globals.css diz que o âmbar não é cor de fundo de secção. Esta é a
-  excepção, e é uma só: o último bloco antes do rodapé, onde não há mais nada a
-  competir e onde a cor faz o trabalho de dizer "é aqui que se age". O que
-  estragava o site antigo não era o laranja existir — era existir em seis
-  painéis, com corpo de texto por cima, gravado em imagens.
+  O outro é a faixa de confiança, logo a seguir ao hero. São dois, estão longe
+  um do outro, e em nenhum deles há texto corrido por cima — só um título, uma
+  linha de entrada e três contactos.
 
-  O texto sobre âmbar é tinta e não branco: dá 8,4:1, enquanto branco sobre
-  âmbar não passa dos 2,3:1 e reprovava.
+  É essa a diferença para o site antigo, que tinha seis painéis de laranja com
+  parágrafos inteiros por cima, gravados em imagens. O problema nunca foi o
+  laranja existir; foi a escala a que aparecia e o que lhe punham em cima.
+
+  Este é o último bloco antes do rodapé, onde não há mais nada a competir e onde
+  a cor faz o trabalho de dizer "é aqui que se age".
+
+  O texto sobre laranja é tinta e não branco: dá 8,31:1, enquanto branco sobre
+  este laranja não passa dos 2,3:1 e reprovava.
+
+  As opacidades do texto secundário são 80% e não 70%. A 70% ainda passa —
+  4,73:1 — mas num painel desta área a diferença entre passar e ler-se bem é
+  visível, e é precisamente o texto esbatido sobre laranja que dá ao site antigo
+  o ar que se quer evitar.
 
   A copy é a do site antigo, e os três títulos com ela.
 */
@@ -46,12 +56,12 @@ const vias = [
 
 export function Cta() {
   return (
-    <section className="bg-ambar text-tinta">
+    <section className="bg-laranja text-tinta">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-24">
         <h2 className="titulo max-w-2xl text-[clamp(2rem,5.5vw,3.25rem)]">
           Mantenha-se em contacto connosco.
         </h2>
-        <p className="mt-5 max-w-xl text-[1.0625rem] leading-relaxed text-tinta/75">
+        <p className="mt-5 max-w-xl text-[1.0625rem] leading-relaxed text-tinta/80">
           Tem uma reparação ou melhoria em mente para a sua casa? Estamos
           prontos para ajudar.
         </p>
@@ -63,7 +73,7 @@ export function Cta() {
               <h3 className="mt-4 font-display text-base font-bold tracking-tight">
                 {titulo}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-tinta/70">{texto}</p>
+              <p className="mt-2 text-sm leading-relaxed text-tinta/80">{texto}</p>
               <a
                 href={href}
                 {...(externo

@@ -138,7 +138,7 @@ export function AntesDepois({
       <span className="pointer-events-none absolute left-3 top-3 z-10 bg-tinta/85 px-2.5 py-1 font-display text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-papel">
         Antes
       </span>
-      <span className="pointer-events-none absolute right-3 top-3 z-10 bg-ambar px-2.5 py-1 font-display text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-tinta">
+      <span className="pointer-events-none absolute right-3 top-3 z-10 bg-laranja px-2.5 py-1 font-display text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-tinta">
         Depois
       </span>
 

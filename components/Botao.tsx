@@ -1,8 +1,8 @@
 /*
   Os botões do site, em três variantes e num sítio só.
 
-  `ambar` é a acção principal e aparece **uma vez por ecrã**. Um segundo botão
-  âmbar ao lado do primeiro faz com que nenhum dos dois seja o principal.
+  `laranja` é a acção principal e aparece **uma vez por ecrã**. Um segundo botão
+  laranja ao lado do primeiro faz com que nenhum dos dois seja o principal.
   `contorno` é o secundário sobre papel; `claro`, o secundário sobre a banda
   escura.
 
@@ -17,7 +17,7 @@ const BASE =
   "inline-flex items-center justify-center gap-2.5 px-6 py-3.5 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.12em] transition-colors duration-200";
 
 const VARIANTES = {
-  ambar: "bg-ambar text-tinta hover:bg-tinta hover:text-papel",
+  laranja: "bg-laranja text-tinta hover:bg-tinta hover:text-papel",
   contorno:
     "border border-tinta/25 text-tinta hover:border-tinta hover:bg-tinta hover:text-papel",
   claro:
@@ -27,7 +27,7 @@ const VARIANTES = {
 export function Botao({
   href,
   children,
-  variante = "ambar",
+  variante = "laranja",
   className = "",
   externo = false,
 }: {

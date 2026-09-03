@@ -23,7 +23,7 @@ export function Hero() {
     <section className="relative overflow-hidden pt-20">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-12 sm:px-8 md:min-h-[86vh] md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:pb-24 md:pt-16">
         <div>
-          <p className="etiqueta flex items-center gap-2.5 text-ambar-texto">
+          <p className="etiqueta flex items-center gap-2.5 text-laranja-texto">
             <Casa className="h-3.5 w-3.5" cheia />
             {site.zona}
           </p>

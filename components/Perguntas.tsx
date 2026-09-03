@@ -172,11 +172,11 @@ export function Perguntas() {
         <span className="sr-only sm:hidden">Perguntas frequentes</span>
         <span
           aria-hidden
-          className="font-display text-lg font-bold leading-none text-ambar sm:hidden"
+          className="font-display text-lg font-bold leading-none text-laranja sm:hidden"
         >
           ?
         </span>
-        <Casa className="hidden h-4 w-4 text-ambar sm:block" cheia />
+        <Casa className="hidden h-4 w-4 text-laranja sm:block" cheia />
         <span className="hidden font-display text-[0.75rem] font-semibold uppercase tracking-[0.12em] sm:inline">
           Dúvidas?
         </span>
@@ -191,7 +191,7 @@ export function Perguntas() {
         <div className="flex max-h-[88dvh] flex-col bg-papel shadow-2xl sm:mb-6 sm:max-h-[min(36rem,82dvh)]">
           <div className="flex shrink-0 items-center justify-between gap-4 bg-tinta px-5 py-4 text-papel">
             <div className="flex items-center gap-3">
-              <Casa className="h-5 w-5 shrink-0 text-ambar" cheia />
+              <Casa className="h-5 w-5 shrink-0 text-laranja" cheia />
               <div>
                 <h2 id="titulo-perguntas" className="font-display text-sm font-bold tracking-tight">
                   Perguntas frequentes
@@ -248,7 +248,7 @@ export function Perguntas() {
                               key={item}
                               className="flex items-start gap-2.5 text-[0.875rem] leading-relaxed text-cinza"
                             >
-                              <Casa className="mt-1 h-2.5 w-2.5 shrink-0 text-ambar" cheia />
+                              <Casa className="mt-1 h-2.5 w-2.5 shrink-0 text-laranja-forte" cheia />
                               {item}
                             </li>
                           ))}
@@ -341,7 +341,7 @@ export function Perguntas() {
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-1 items-center justify-center gap-2 bg-ambar py-2.5 font-display text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-tinta transition-opacity hover:opacity-90"
+                className="flex flex-1 items-center justify-center gap-2 bg-laranja py-2.5 font-display text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-tinta transition-opacity hover:opacity-90"
               >
                 <Whatsapp className="h-3.5 w-3.5" />
                 WhatsApp
@@ -367,7 +367,7 @@ function Ligacao({
   aoSeguir: () => void;
 }) {
   const classes =
-    "mt-2 inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ambar-texto underline decoration-ambar/40 underline-offset-4 transition-colors hover:decoration-ambar";
+    "mt-2 inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-laranja-texto underline decoration-laranja-forte/40 underline-offset-4 transition-colors hover:decoration-laranja-forte";
 
   if (ligacao.href.startsWith("http")) {
     return (

@@ -54,7 +54,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${site.telefone}`}
-                  className="flex items-center gap-3 transition-colors hover:text-ambar"
+                  className="flex items-center gap-3 transition-colors hover:text-laranja"
                 >
                   <Telefone className="h-4 w-4 shrink-0 text-papel/45" />
                   <span className="numeros">{site.telefoneCompleto}</span>
@@ -63,7 +63,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="flex items-start gap-3 transition-colors hover:text-ambar"
+                  className="flex items-start gap-3 transition-colors hover:text-laranja"
                 >
                   <Email className="mt-0.5 h-4 w-4 shrink-0 text-papel/45" />
                   <span className="break-all">{site.email}</span>

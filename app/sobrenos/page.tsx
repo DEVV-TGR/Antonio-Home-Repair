@@ -66,11 +66,11 @@ export default function Pagina() {
 
           {/*
             A frase que fecha a página do site antigo, aqui tratada como o que
-            é: a promessa da casa. Em display, grande, e com o filete âmbar do
+            é: a promessa da casa. Em display, grande, e com o filete laranja do
             lado — a única coisa nesta página que não é corpo de texto.
           */}
           <Reveal>
-            <blockquote className="border-l-2 border-ambar pl-6 md:pl-8">
+            <blockquote className="border-l-2 border-laranja-forte pl-6 md:pl-8">
               <p className="titulo text-[clamp(1.5rem,3.2vw,2.125rem)]">
                 Porque aqui, cada cliente é tratado como vizinho — com respeito,
                 honestidade e atenção aos detalhes.

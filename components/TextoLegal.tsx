@@ -58,7 +58,7 @@ export function TextoLegal({ documento }: { documento: Legal }) {
                   >
                     <span
                       aria-hidden
-                      className="mt-2.5 h-1 w-1 shrink-0 bg-ambar"
+                      className="mt-2.5 h-1 w-1 shrink-0 bg-laranja-forte"
                     />
                     {item}
                   </li>
@@ -75,7 +75,7 @@ export function TextoLegal({ documento }: { documento: Legal }) {
         ))}
       </div>
 
-      <p className="mt-14 border-l-2 border-ambar pl-6 text-[0.9375rem] leading-relaxed text-tinta">
+      <p className="mt-14 border-l-2 border-laranja-forte pl-6 text-[0.9375rem] leading-relaxed text-tinta">
         {documento.fecho}
       </p>
     </section>

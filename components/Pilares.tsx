@@ -2,7 +2,7 @@
   Os quatro pilares.
 
   No site antigo eram oito imagens — quatro cartões preto com o título, quatro
-  laranja com o texto. Aqui são texto, com o filete âmbar à esquerda a fazer o
+  laranja com o texto. Aqui são texto, com o filete laranja à esquerda a fazer o
   trabalho que a cor de fundo fazia lá, sem gastar um painel inteiro para isso.
 
   Ver lib/pilares.ts para as transcrições e para o porquê de não terem sido
@@ -24,7 +24,7 @@ export function Pilares() {
         <div className="mt-14 grid gap-x-12 gap-y-10 sm:grid-cols-2">
           {pilares.map((pilar, i) => (
             <Reveal key={pilar.titulo} atraso={(i % 2) * 0.08}>
-              <div className="border-l-2 border-ambar pl-6">
+              <div className="border-l-2 border-laranja-forte pl-6">
                 <h3 className="font-display text-xl font-bold tracking-tight">
                   {pilar.titulo}
                 </h3>

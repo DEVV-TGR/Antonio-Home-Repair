@@ -69,7 +69,7 @@ export default function Pagina() {
                         key={trabalho}
                         className="flex items-start gap-2.5 text-sm text-cinza"
                       >
-                        <Casa className="mt-1 h-3 w-3 shrink-0 text-ambar" cheia />
+                        <Casa className="mt-1 h-3 w-3 shrink-0 text-laranja-forte" cheia />
                         {trabalho}
                       </li>
                     ))}

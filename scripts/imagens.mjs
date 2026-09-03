@@ -67,7 +67,7 @@ for (const ficheiro of ficheiros) {
 
   A fotografia é clara, de fundo quase branco. Logo preto sobre ela chega, e as
   ferramentas continuam a ver-se, que é metade do que a imagem tem para dizer. O
-  filete âmbar em baixo é a única marca de cor.
+  filete laranja em baixo é a única marca de cor.
 */
 const LOGO = 260;
 
@@ -78,7 +78,7 @@ const logo = await sharp("public/images/logo.svg", { density: 300 })
 
 const filete = Buffer.from(
   `<svg width="1200" height="630">
-     <rect x="0" y="610" width="1200" height="20" fill="#e8a317"/>
+     <rect x="0" y="610" width="1200" height="20" fill="#f5924e"/>
    </svg>`,
 );
 
